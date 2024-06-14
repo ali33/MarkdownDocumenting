@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Version>2.3.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>enisn</Authors>
@@ -18,16 +18,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RazorGenerate>true</RazorGenerate>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\enisn\Source\Repos\enisn\MarkdownDocumenting\MarkdownDocumenting\MarkdownDocumenting.xml</DocumentationFile>
-    <WarningLevel>2</WarningLevel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\enisn\Source\Repos\enisn\MarkdownDocumenting\MarkdownDocumenting\MarkdownDocumenting.xml</DocumentationFile>
-  </PropertyGroup>
+  </PropertyGroup> 
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -35,5 +26,15 @@
 
   <ItemGroup>
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MarkdownDocumenting.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Docs\Views\" />
   </ItemGroup>
 </Project>
